@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <style>
+        .test-div {
+            width: 100%;
+            height: 100%;
+            background-color: #567;
+        }
+    </style>
+</head>
+<body>
+    <div id="pictures1">
+        <img src="https://avatars.mds.yandex.net/get-pdb/28866/a40a798a-e191-497b-93f8-3d8f4b17a63b/s1200" alt="1" />
+        <img src="https://avatars.mds.yandex.net/get-pdb/69339/998d5db3-6765-4f24-ac20-ec3d94a82394/s1200" alt="2" />
+        <img src="https://avatars.mds.yandex.net/get-pdb/472427/3ba2fab7-ecbf-4569-a635-8dd0319bb93c/s1200" alt="3" />
+        <img src="https://avatars.mds.yandex.net/get-pdb/28866/3a036f17-af72-438f-a074-a271f573e8a8/s1200" alt="4" />
+        <div class="test-div">Текст</div>
+        <img src="https://avatars.mds.yandex.net/get-pdb/202366/07f68022-6e8a-4acf-a341-9ebabbca663d/s1200" alt="6" />
+    </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var slider1 = new SliderJS('pictures1',
+        {
+          autoplay: true,
+          autoplayInterval: 2000,
+          hideControls: false
+        });
+    });
+    </script>
+</body>
+</html>

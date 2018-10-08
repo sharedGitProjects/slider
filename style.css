@@ -1,0 +1,35 @@
+.slides {
+  overflow: hidden; 
+  display: block;
+}
+.slidesjs-container {
+  overflow: hidden; 
+  position: relative; 
+}
+.slidesjs-control {
+  position: relative; 
+  left: 0px; 
+}
+.slidesjs-slide {
+  position: absolute; 
+  top: 0px; 
+  left: 0px;
+  width: 100%; 
+  display: block;
+  z-index: 0;
+  -webkit-transition: left 1s ease-in-out;
+  -moz-transition: left 1s ease-in-out;
+  -o-transition: left 1s ease-in-out;
+  transition: left 1s ease-in-out;
+}
+.slidesjs-navigation {
+  text-decoration:none;
+  color: gray;
+  font-size: 1.5em;
+}
+.slidesjs-autoplay {
+  font-size: 1.3em;
+}
+.slidesjs-pause {
+  font-size: 1.3em;
+}
