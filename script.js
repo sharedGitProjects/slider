@@ -31,6 +31,7 @@ class SliderJS {
         this._playing = false;
         this._linkBuilder = new LinkBuilder();
         this.init();
+        this._touchState = { isActive: false, x: 0, y: 0, minDiff: 50 };
     };
     
     init() {
@@ -69,6 +70,23 @@ class SliderJS {
         slidesContainer.addEventListener("transitionend", function() {
             self._playing = false;
         });
+        
+        slidesContainer.addEventListener('touchstart', function(e){
+            self._touchState.isActive = true;
+            self._touchState.x = e.changedTouches[0].pageX;
+            self._touchState.y = e.changedTouches[0].pageY;
+            //console.log(`X=${e.changedTouches[0].pageX}; Y=${e.changedTouches[0].pageX}`);
+        }, false);
+        slidesContainer.addEventListener('touchend', function(e){
+            self._touchState.isActive = false;
+            let diffX = e.changedTouches[0].pageX - self._touchState.x;
+            self._touchState.x = 0;
+            if (diffX > self._touchState.minDiff) {
+              self.prev.call(self);
+            } else if ((-1 * diffX) > (-1 * self._touchState.minDiff)) {
+              self.next.call(self);
+            }
+        }, false);
 
         let slidesControl = document.createElement("div");
         slidesControl.classList.add("slidesjs-control");
